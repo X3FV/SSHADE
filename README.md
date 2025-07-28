@@ -15,7 +15,7 @@ SSHade is an advanced SSH security testing and attack framework. It provides a s
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/X3FV/SSHADE
    cd sshade
    ```
 2. **Install dependencies:**
