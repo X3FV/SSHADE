@@ -1,0 +1,244 @@
+# SSHade Common Passwords Wordlist
+# Top 1000+ most frequently used SSH passwords
+# Organized by category and probability
+
+# Top 20 most common
+password
+123456
+12345678
+1234
+qwerty
+12345
+dragon
+admin
+root
+password1
+letmein
+monkey
+1234567
+123123
+welcome
+shadow
+sunshine
+master
+passw0rd
+default
+
+# Common default credentials
+admin123
+administrator
+ubnt
+raspberry
+changeme
+service
+user
+guest
+ftp
+test
+
+# Simple patterns
+111111
+123456789
+123321
+654321
+666666
+888888
+abc123
+pass123
+p@ssw0rd
+p@55w0rd
+
+# Common SSH defaults
+toor
+alpine
+password123
+Password
+P@ssword
+Admin
+Root
+toor
+
+# Common service passwords
+anonymous
+cisco
+juniper
+hp
+hp.com
+hpinvent
+hp.com
+hpinvent
+
+# Cloud/VM defaults
+aws
+azure
+gcp
+digitalocean
+linode
+ec2-user
+centos
+debian
+ubuntu
+redhat
+
+# Common database passwords
+mysql
+oracle
+postgres
+mongodb
+redis
+sqlserver
+
+# Network device defaults
+admin
+password
+cisco
+juniper
+f5rocks
+default
+enable
+superuser
+super
+
+# Common variations
+password!
+password@
+password#
+password$
+password%
+password^
+password&
+password*
+password(
+password)
+
+# Number sequences
+000000
+121212
+112233
+12344321
+123654
+123abc
+123asd
+123qwe
+123zxc
+
+# Keyboard patterns
+1qaz2wsx
+1q2w3e4r
+qazwsx
+qwertyuiop
+asdfghjkl
+zxcvbnm
+!@#$%^&*
+
+# Common names
+administrator
+backup
+demo
+testuser
+operator
+supervisor
+manager
+webmaster
+sysadmin
+
+# Common Linux/Unix passwords
+bin
+daemon
+games
+halt
+lp
+mail
+news
+nobody
+sync
+www-data
+
+# Common Windows passwords
+Administrator
+backupadmin
+domainadmin
+helpdesk
+sqladmin
+support
+techsupport
+winadmin
+
+# Common router passwords
+admin
+password
+1234
+12345
+123456
+12345678
+123456789
+administrator
+root
+user
+
+# Common IoT/embedded
+raspberry
+arduino
+beaglebone
+orangepi
+bananapi
+jetson
+rock64
+
+# Common database users
+sa
+sys
+system
+dba
+dbadmin
+dbuser
+postgres
+mysql
+oracle
+
+# Common web app passwords
+wordpress
+joomla
+drupal
+magento
+opencart
+prestashop
+admin123
+shopadmin
+wpadmin
+
+# Common gaming passwords
+minecraft
+steam
+origin
+uplay
+battlenet
+epicgames
+gog.com
+
+# Common mobile passwords
+android
+ios
+iphone
+ipad
+samsung
+huawei
+xiaomi
+oppo
+vivo
+
+# Common regional passwords
+india
+china
+japan
+korea
+russia
+brazil
+germany
+france
+spain
+italy
+
+# Blank/empty password
+[empty]
+[blank]
