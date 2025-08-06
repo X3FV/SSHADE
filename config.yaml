@@ -1,0 +1,122 @@
+# SSHade Configuration File
+
+# Connection settings
+connection:
+  default_port: 22           # Default SSH port
+  timeout: 15                # Connection timeout in seconds
+  banner_timeout: 30         # Banner grab timeout
+  
+# Brute force settings
+brute:
+  delay: 2.5                 # Base delay between attempts
+  jitter: 0.5                # Random delay variation (+/- this value)
+  max_attempts: 3            # Attempts per user before lockout
+  retry_delay: 300           # Wait time after lockout (seconds)
+  max_threads: 5             # Maximum concurrent threads
+  max_retries: 3             # Maximum retry attempts per credential
+  backoff_factor: 2.0        # Exponential backoff multiplier
+  lockout_delay: 300         # Delay after account lockout (seconds)
+  
+# Error handling and recovery
+recovery:
+  health_check_interval: 50  # Check connection health every N attempts
+  max_connection_errors: 10  # Max errors before pausing
+  rate_limit_threshold: 5    # Rate limit detections before increasing delays
+  recovery_pause: 60         # Pause duration for recovery (seconds)
+  adaptive_delays: true      # Enable adaptive delay based on server responses
+
+# Credential prioritization and scoring
+prioritization:
+  enabled: true              # Enable credential scoring and prioritization
+  context_detection: true    # Detect target context for better scoring
+  min_score_threshold: 20    # Minimum score to attempt (0-100)
+  max_attempts_per_score: 1000  # Max attempts per score range
+  score_ranges:              # Score ranges for different attack phases
+    high_priority: [80, 100]     # Try high-scoring credentials first
+    medium_priority: [50, 79]    # Then medium-scoring
+    low_priority: [20, 49]       # Finally low-scoring
+  target_contexts:           # Context-specific scoring adjustments
+    web_server:
+      high_priority_users: ['www', 'web', 'apache', 'nginx']
+      high_priority_passwords: ['webpass', 'server', 'hosting']
+    database_server:
+      high_priority_users: ['mysql', 'postgres', 'oracle', 'db']
+      high_priority_passwords: ['dbpass', 'database', 'sql']
+    network_device:
+      high_priority_users: ['cisco', 'juniper', 'admin', 'root']
+      high_priority_passwords: ['cisco', 'juniper', 'router', 'switch']
+
+# Wordlist paths (use environment variables for sensitive paths)
+wordlists:
+  users: "data/wordlists/common_users.txt"
+  passwords: "data/wordlists/common_pass.txt"
+  known_keys: "data/keys/known_keys.txt"  # File with common public keys
+
+# SSH Key paths (use environment variables)
+keys:
+  private_key: "${SSH_PRIVATE_KEY_PATH:-keys/demo_id_rsa}"  # Use demo key by default
+  public_key: "${SSH_PUBLIC_KEY_PATH:-keys/demo_id_rsa.pub}"  # Use demo key by default
+  authorized_keys_template: "keys/authorized_keys_template"
+
+# Post-exploitation settings
+post:
+  # Common paths to check for writable directories
+  writable_paths:
+    - "/tmp"
+    - "/var/tmp"
+    - "/dev/shm"
+    - "/home/*/"
+
+  # Common persistence locations
+  persistence:
+    cron: "/var/spool/cron/*"          # User cron locations
+    ssh_keys: "~/.ssh/authorized_keys" # SSH key location
+    profile: "~/.profile"              # Shell profile
+    systemd: "/etc/systemd/system/"     # Systemd service directory
+
+# Logging and OpSec
+opsec:
+  clean_logs: true           # Attempt to remove evidence
+  log_commands: false       # Don't log commands in target's history
+  timestomp: true           # Modify file timestamps
+  use_proxy: false          # Route traffic through proxy
+  # proxy: "socks5://127.0.0.1:9050" # Tor proxy example
+
+# Exploit settings (for future modules)
+exploits:
+  libssh_auth_bypass: false  # CVE-2018-10933
+  ssh_agent_hijack: true     # SSH-Agent forwarding attacks
+
+# Default payload locations
+payloads:
+  reverse_shell: "data/payloads/shell.sh"
+  keygen: "data/payloads/keygen.py"
+
+# Rootkit settings
+rootkit:
+  user_mode: true               # Enable user-mode rootkit (LD_PRELOAD)
+  kernel_mode: false            # Enable kernel-mode rootkit (requires kernel headers)
+  hide_processes: true         # Hide specific processes
+  hide_files: true              # Hide files and directories
+  hide_connections: true        # Hide network connections
+  cleanup_traces: true          # Remove logs and traces
+  stealth_level: "high"        # Stealth level: low, medium, high
+
+# Environment variables for sensitive data
+environment:
+  # SSH Key paths (set these in .env file)
+  ssh_private_key_path: "${SSH_PRIVATE_KEY_PATH:-keys/demo_id_rsa}"
+  ssh_public_key_path: "${SSH_PUBLIC_KEY_PATH:-keys/demo_id_rsa.pub}"
+  
+  # API Keys (set these in .env file)
+  api_keys:
+    shodan: "${SHODAN_API_KEY:-}"
+    virustotal: "${VIRUSTOTAL_API_KEY:-}"
+    censys: "${CENSYS_API_KEY:-}"
+    censys_secret: "${CENSYS_SECRET:-}"
+  
+  # Proxy settings
+  proxy:
+    http: "${HTTP_PROXY:-}"
+    https: "${HTTPS_PROXY:-}"
+    socks5: "${SOCKS5_PROXY:-}"

@@ -1,0 +1,8 @@
+{"host": "192.168.1.100", "hostname": "web-server-01", "user": "admin", "timestamp": "2024-01-15T14:30:00Z", "module": "ssh_bruteforce", "version": "1.0.0"}
+{"host": "192.168.1.101", "hostname": "db-server-02", "user": "root", "timestamp": "2024-01-15T15:45:00Z", "module": "exploit_payload", "version": "1.2.0"}
+{"host": "192.168.1.102", "hostname": "mail-server-03", "user": "postfix", "timestamp": "2024-01-15T16:20:00Z", "module": "credential_harvest", "version": "1.1.0"}
+{"host": "192.168.1.103", "hostname": "file-server-04", "user": "ftpuser", "timestamp": "2024-01-15T17:10:00Z", "module": "lateral_movement", "version": "1.3.0"}
+{"host": "192.168.1.100", "hostname": "web-server-01", "user": "www-data", "timestamp": "2024-01-15T18:05:00Z", "module": "privilege_escalation", "version": "1.4.0"}
+{"host": "192.168.1.104", "hostname": "workstation-05", "user": "john.doe", "timestamp": "2024-01-15T19:30:00Z", "module": "phishing_payload", "version": "1.0.1"}
+{"host": "192.168.1.105", "hostname": "laptop-06", "user": "jane.smith", "timestamp": "2024-01-15T20:15:00Z", "module": "keylogger", "version": "1.5.0"}
+{"host": "192.168.1.106", "hostname": "nas-device-07", "user": "backup", "timestamp": "2024-01-15T21:00:00Z", "module": "ransomware", "version": "2.0.0"}
