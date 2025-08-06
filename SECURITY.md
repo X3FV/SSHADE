@@ -108,7 +108,7 @@ SSHade includes several security features:
 
 ## Contact Information
 
-- **Security Email**: x3fv@gmail.com
+- **Security Email**: x3fv20@gmail.com
 
 ## Acknowledgments
 
