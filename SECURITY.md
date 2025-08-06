@@ -108,9 +108,7 @@ SSHade includes several security features:
 
 ## Contact Information
 
-- **Security Email**: security@yourdomain.com
-- **PGP Key**: [Add your PGP key fingerprint here]
-- **Security Team**: [Add team contact information]
+- **Security Email**: x3fv@gmail.com
 
 ## Acknowledgments
 
